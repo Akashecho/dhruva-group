@@ -1,17 +1,48 @@
-# Valorant Front-End Website
+# Dhruva Group Website
 
-Welcome to my fun little project! This is a Valorant-themed website that I built using **React**, **TailwindCSS**, and **GSAP** for some cool animations. It's my attempt at creating a visually appealing, interactive site that showcases the game's characters, maps, and updates. I'm still learning and experimenting with different features, so this is definitely a work in progress!
+A premium corporate website showcasing Dhruva Group's excellence across five strategic sectors: Defence, AI, AgriTech, Corporate, and Security.
+
+## Features
+
+- 🎨 Modern dark theme with gold accents
+- ⚡ Built with React + Vite + TailwindCSS
+- 🎭 GSAP animations and scroll effects
+- 📱 Fully responsive design
+- 🚀 Optimized for performance
+
+## Sectors
+
+1. **Defence** - Strategic defence solutions and advanced military technologies
+2. **AI** - Cutting-edge artificial intelligence systems
+3. **AgriTech** - Revolutionary agricultural technology
+4. **Corporate** - Enterprise solutions and strategic consulting
+5. **Security** - Advanced security systems and cyber protection
 
 ## Tech Stack
 
-- **React**: For the front-end structure
-- **TailwindCSS**: For easy, responsive styling
-- **GSAP**: For all the animations you see on the site
+- React 18
+- Vite 5
+- TailwindCSS 3
+- GSAP 3
+- Google Fonts (Cormorant Garamond, Manrope)
 
-## Getting Started
+## Development
 
-If you'd like to check out the project on your own machine:
+```bash
+npm install
+npm run dev
+```
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/shivaji43/valorant-website.git
+## Build
+
+```bash
+npm run build
+```
+
+## Deploy
+
+Deployed on Vercel: [Your Vercel URL]
+
+---
+
+© Dhruva Group 2026. All rights reserved.

@@ -1,6 +1,6 @@
-import { gsap } from "gsap";
+import gsap from "gsap";
 import { useEffect, useRef } from "react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollTrigger } from "gsap/all";
 import clsx from "clsx";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -31,7 +31,7 @@ const AnimatedTitle = ({ title, containerClass }) => {
       );
     }, containerRef);
 
-    return () => ctx.revert(); // Clean up on unmount
+    return () => ctx.revert();
   }, []);
 
   return (

@@ -7,8 +7,8 @@
 body {
   width: 100dvw;
   overflow-x: hidden;
-  background-color: #dfdff0;
-  font-family: "General Sans", sans-serif;
+  background-color: #0a0a0f;
+  font-family: "Manrope", sans-serif;
 }
 
 @layer base {
@@ -40,15 +40,15 @@ body {
 
 @layer utilities {
   .border-hsla {
-    @apply border border-white/20;
+    @apply border border-gold-500/20;
   }
 
   .nav-hover-btn {
-    @apply relative ms-10 font-general text-xs uppercase text-blue-50 after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-neutral-800 after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:origin-bottom-left hover:after:scale-x-100 dark:after:bg-white cursor-pointer;
+    @apply relative ms-10 font-manrope text-xs uppercase text-gold-500 after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-gold-500 after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:origin-bottom-left hover:after:scale-x-100 cursor-pointer;
   }
 
   .floating-nav {
-    @apply bg-black rounded-lg border;
+    @apply bg-dhruva-black/95 backdrop-blur-md rounded-lg border border-gold-500/10;
   }
 
   .absolute-center {
@@ -64,16 +64,17 @@ body {
   }
 
   .special-font b {
-    font-family: "Zentry";
-    font-feature-settings: "ss01" on;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 700;
+    color: #D4AF37;
   }
 
   .hero-heading {
-    @apply uppercase font-zentry font-black text-5xl sm:right-10 sm:text-7xl md:text-9xl lg:text-[12rem];
+    @apply uppercase font-cormorant font-bold text-5xl sm:right-10 sm:text-7xl md:text-9xl lg:text-[12rem] tracking-wide;
   }
 
   .about-subtext {
-    @apply absolute bottom-[-80dvh] left-1/2 w-full max-w-96 -translate-x-1/2 text-center font-circular-web text-lg md:max-w-[34rem];
+    @apply absolute bottom-[-80dvh] left-1/2 w-full max-w-96 -translate-x-1/2 text-center font-manrope text-lg md:max-w-[34rem];
   }
 
   .about-image {
@@ -85,7 +86,7 @@ body {
   }
 
   .animated-word {
-    @apply special-font font-zentry font-black opacity-0;
+    @apply special-font font-cormorant font-bold opacity-0;
     transform: translate3d(10px, 51px, -60px) rotateY(60deg) rotateX(-40deg);
     transform-origin: 50% 50% -150px !important;
     will-change: opacity, transform;
@@ -100,7 +101,7 @@ body {
   }
 
   .bento-title {
-    @apply uppercase md:text-6xl text-4xl font-black font-zentry;
+    @apply uppercase md:text-6xl text-4xl font-bold font-cormorant;
   }
 
   .story-img-container {
@@ -119,7 +120,7 @@ body {
   }
 
   .gallery-img-container {
-    @apply size-64 overflow-hidden bg-violet-300;
+    @apply size-64 overflow-hidden bg-dhruva-gray;
   }
 
   .gallery-img {
@@ -141,10 +142,26 @@ body {
   .contact-clip-path-2 {
     clip-path: polygon(29% 15%, 85% 30%, 50% 100%, 10% 64%);
   }
+
+  /* Dhruva specific utilities */
+  .gold-gradient {
+    background: linear-gradient(135deg, #D4AF37 0%, #f4e4a6 50%, #D4AF37 100%);
+  }
+
+  .gold-text-gradient {
+    background: linear-gradient(135deg, #D4AF37 0%, #f4e4a6 50%, #D4AF37 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .dark-gradient {
+    background: linear-gradient(180deg, #0a0a0f 0%, #121218 50%, #0a0a0f 100%);
+  }
 }
 
 .indicator-line {
-  @apply h-1 w-px rounded-full bg-white transition-all duration-200 ease-in-out;
+  @apply h-1 w-px rounded-full bg-gold-500 transition-all duration-200 ease-in-out;
 }
 
 .indicator-line.active {
@@ -167,12 +184,11 @@ body {
   }
 }
 
-/* From Uiverse.io by G4b413l */
-/* https://uiverse.io/G4b413l/tidy-walrus-92 */
+/* Loading spinner - Dhruva themed */
 .three-body {
   --uib-size: 35px;
   --uib-speed: 0.8s;
-  --uib-color: #5d3fd3;
+  --uib-color: #D4AF37;
   position: relative;
   display: inline-block;
   height: var(--uib-size);
@@ -270,4 +286,23 @@ body {
     transform: translateY(66%) scale(0.65);
     opacity: 0.8;
   }
+}
+
+/* Ambient glow effects */
+.glow-gold {
+  box-shadow: 0 0 40px rgba(212, 175, 55, 0.3);
+}
+
+.glow-teal {
+  box-shadow: 0 0 40px rgba(45, 212, 191, 0.3);
+}
+
+/* Noise overlay */
+.noise-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
 }

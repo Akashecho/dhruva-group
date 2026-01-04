@@ -6,7 +6,7 @@ import { TiLocationArrow } from "react-icons/ti";
 
 import Button from "./Button";
 
-const navItems = ["Agents", "Prologue", "About", "Contact"];
+const navItems = ["Sectors", "Vision", "About", "Contact"];
 
 const NavBar = () => {
   const [isAudioPlaying, setIsAudioPlaying] = useState(false);
@@ -58,18 +58,24 @@ const NavBar = () => {
   return (
     <div
       ref={navContainerRef}
-      className="fixed inset-x-0 top-4 z-50 h-16 border-none transition-all duration-700 sm:inset-x-6 bg-red-50 bg-opacity-100"
+      className="fixed inset-x-0 top-4 z-50 h-16 border-none transition-all duration-700 sm:inset-x-6"
     >
       <header className="absolute top-1/2 w-full -translate-y-1/2">
-        <nav className="flex size-full items-center bg-red-50 bg-opacity-100 justify-between p-4 rounded">
+        <nav className="flex size-full items-center justify-between p-4 rounded-lg bg-dhruva-black/80 backdrop-blur-md border border-gold-500/10">
           <div className="flex items-center gap-7">
-            <img src="/img/V_Logomark_Off-White.png" alt="logo" className="w-20" />
+            {/* Dhruva Logo */}
+            <div className="flex items-center gap-2">
+              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gold-500 to-gold-700 flex items-center justify-center">
+                <span className="font-cormorant font-bold text-dhruva-black text-xl">D</span>
+              </div>
+              <span className="font-cormorant font-bold text-gold-500 text-xl hidden sm:block">DHRUVA</span>
+            </div>
             <Button
-              id="product-button"
-              title="Download Now"
+              id="partner-button"
+              title="Partner With Us"
               rightIcon={<TiLocationArrow />}
-              containerClass="bg-red-500 md:flex hidden items-center justify-center gap-1"
-              textClass="text-white"
+              containerClass="bg-gold-500 md:flex hidden items-center justify-center gap-1 hover:bg-gold-400 transition-colors"
+              textClass="text-dhruva-black font-semibold"
             />
           </div>
 
@@ -79,7 +85,7 @@ const NavBar = () => {
                 <a
                   key={index}
                   href={`#${item.toLowerCase()}`}
-                  className="nav-hover-btn text-white hover:text-white duration-200"
+                  className="nav-hover-btn"
                 >
                   {item}
                 </a>
@@ -116,6 +122,3 @@ const NavBar = () => {
 };
 
 export default NavBar;
-
-
-
